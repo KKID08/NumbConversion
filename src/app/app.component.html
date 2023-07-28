@@ -1,0 +1,71 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<div class="website" [ngClass]="{ 'dark-mode': darkMode }">
+  <div class="container">
+    <h1>Number Conversion Test</h1>
+
+    <div class="converter">
+      <div class="input-container">
+        <label for="from-system">From:</label>
+        <select id="from-system" [(ngModel)]="fromSystem" (change)="fromSystemChange()">
+          <option value="binary">Binary</option>
+          <option value="hexadecimal">Hexadecimal</option>
+          <option value="decimal">Decimal</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="to-system">To:</label>
+        <select id="to-system" [(ngModel)]="toSystem">
+          <option value="binary">Binary</option>
+          <option value="hexadecimal">Hexadecimal</option>
+          <option value="decimal">Decimal</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="user-answer">Your Answer:</label>
+        <input type="text" id="user-answer" placeholder="Enter your answer" [(ngModel)]="userAnswer" (keyup.enter)="checkAnswer()">
+      </div>
+      <div class="random-number" style="font-size: 20px;">Number to Convert: <span style="font-size: 25px; color: rgb(0, 150, 136);">{{ numberToConvert }}</span></div>
+
+      <button class="check-button" (click)="checkAnswer()" style="font-size: 21px;">Check</button>
+      <div class="feedback" style="font-size: 25px; color: rgb(0, 150, 136);">{{ feedback }}</div>
+    </div>
+  </div>
+
+  <div class="widgetBar">
+
+    <button class="dark-mode-toggle" (click)="toggleDarkMode()" [ngClass]="{ 'spin': isSpinning[1] }">
+      <i class="fas" [ngClass]="{ 'fa-moon': !darkMode, 'fa-sun': darkMode }"></i>
+    </button>    
+
+    <button class="language-toggle" (click)="toggleLanguage()" [ngClass]="{ 'spin': isSpinning[0] }">
+      <ng-container *ngIf="languageGerman">
+        <img class="fas" src="assets/GermanyFlagCircle.svg" alt="Germany Flag">
+      </ng-container>
+      <ng-container *ngIf="!languageGerman">
+        <img class="fas" src="assets/BritFlagCircle.svg" alt="America Flag">
+      </ng-container>
+    </button>
+    
+    <div class="range-container">
+      <div class="range-label">
+        <label for="min-value">Min:</label>
+      </div>
+      <div class="range-input">
+        <input type="number" id="min-value" [(ngModel)]="minDecimalValue" min="1" (change)="updateNumberToConvert()" required class="input-range">
+      </div>
+      <div class="range-label">
+        <label for="max-value">Max:</label>
+      </div>
+      <div class="range-input">
+        <input type="number" id="max-value" [(ngModel)]="maxDecimalValue" min="1" (change)="updateNumberToConvert()" required class="input-range">
+      </div>
+    </div>
+
+  </div>
+
+</div>

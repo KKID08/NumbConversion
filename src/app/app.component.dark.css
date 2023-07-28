@@ -1,0 +1,66 @@
+/* Dark mode button styles */
+.dark-mode-toggle { 
+    margin-top: -15px;
+    margin-left: 90%;
+
+    width: 50px;
+    height: 50px;
+    background-color: #222222;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    color: #FFFFFF;
+
+    /* Add the following animation-related styles */
+    transition: transform 0.1s ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+  
+.dark-mode-toggle .fa-moon,
+.dark-mode-toggle .fa-sun {
+    font-size: 24px;
+}
+  
+.dark-mode-toggle.sun .fa-moon {
+    display: none;
+}
+  
+.dark-mode-toggle.sun .fa-sun {
+    display: inline;
+}
+    
+/* Dark mode styles */
+.dark-mode.website {
+    background-color: #222222;
+    color: #FFFFFF;
+}
+  
+.dark-mode h1 {
+    color: #FFFFFF;
+}
+  
+.dark-mode.converter {
+    background-color: #333333;
+}
+  
+.dark-mode.input-container label {
+    color: #FFFFFF;
+}
+  
+.dark-mode select,
+.dark-mode input[type="text"],
+.dark-mode input[type="number"] {
+    background-color: #444444;
+    color: #FFFFFF;
+}
+  
+.dark-mode.check-button {
+    background-color: #009688;
+    color: #FFFFFF;
+}

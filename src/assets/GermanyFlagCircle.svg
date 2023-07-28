@@ -1,0 +1,21 @@
+<svg width="50px" height="50px" viewBox="0 0 400 400" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 0L400 0L400 400L0 400L0 0Z" id="path_1" />
+    <path d="M0 200C0 89.543 89.543 0 200 0C310.457 0 400 89.543 400 200C400 310.457 310.457 400 200 400C89.543 400 0 310.457 0 200Z" id="path_2" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+    <clipPath id="mask_1">
+      <use xlink:href="#path_2" />
+    </clipPath>
+  </defs>
+  <g id="Frame" clip-path="url(#clip_1)">
+    <g id="Group">
+      <g clip-path="url(#mask_1)">
+        <path d="M0 267L400 267L400 400L0 400L0 267Z" id="Rectangle-3" fill="#FFE607" fill-rule="evenodd" stroke="none" />
+        <path d="M0 133L400 133L400 267L0 267L0 133Z" id="Rectangle-2" fill="#FF0000" fill-rule="evenodd" stroke="none" />
+        <path d="M0 0L400 0L400 133L0 133L0 0Z" id="Rectangle" fill="#000000" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>
